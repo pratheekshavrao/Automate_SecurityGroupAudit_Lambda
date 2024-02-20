@@ -13,21 +13,21 @@ Make sure there are some Security groups in your account and also some with inbo
 
    ![alt text](https://github.com/pratheekshavrao/Automate_SecurityGroupAudit_Lambda/blob/master/images/Sns_topic_created.jpg)
 
-3.	Next to create a Lambda function,  navigate to Lambda console. Click on "Create function". Choose a meaningful name for your Lambda function, specify the runtime as Python 3.9, and create a new role.
+2.	Next to create a Lambda function,  navigate to Lambda console. Click on "Create function". Choose a meaningful name for your Lambda function, specify the runtime as Python 3.9, and create a new role.
 
    ![alt text](https://github.com/pratheekshavrao/Automate_SecurityGroupAudit_Lambda/blob/master/images/Lambda_created.jpg)
 
-5. For local testing of Lambda functions, download the functions to Cloud9 environment, create event.json and template .yaml files. Use below code from terminal to test the functions.
+3. For local testing of Lambda functions, download the functions to Cloud9 environment, create event.json and template .yaml files. Use below code from terminal to test the functions.
 
    ![alt text](https://github.com/pratheekshavrao/Automate_SecurityGroupAudit_Lambda/blob/master/images/Local_invoke_command.jpeg)
 
-7. Upon successful local testing, upload the Lambda function code from Cloud9 to AWS Lambda.
+4. Upon successful local testing, upload the Lambda function code from Cloud9 to AWS Lambda.
 
-8.	Grant Permissions to Lambda for EC2 Access and SNS.Attach an IAM policy to the Lambda Execution Role to permit access to EC2 resources to access Security Groups and also for SNS.
+5.	Grant Permissions to Lambda for EC2 Access and SNS.Attach an IAM policy to the Lambda Execution Role to permit access to EC2 resources to access Security Groups and also for SNS.
 
    ![alt text](https://github.com/pratheekshavrao/Automate_SecurityGroupAudit_Lambda/blob/master/images/Execution_role_lambda.jpg)
 
-10.	To configure Amazon EventBridge Scheduler navigate to the Amazon EventBridge console.  Create a new schedule with a schedule expression, specifying a recurrence pattern for weekly execution at a designated time. Set the scheduler’s target to be your Lambda function.
+6.	To configure Amazon EventBridge Scheduler navigate to the Amazon EventBridge console.  Create a new schedule with a schedule expression, specifying a recurrence pattern for weekly execution at a designated time. Set the scheduler’s target to be your Lambda function.
 
     ![alt text](https://github.com/pratheekshavrao/Automate_SecurityGroupAudit_Lambda/blob/master/images/Event_bridge_schedule_created.jpg)
 
