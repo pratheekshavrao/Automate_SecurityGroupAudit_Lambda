@@ -12,7 +12,7 @@ def lambda_handler(event, context):
             for ip_range in sg_rules['IpRanges']:
                 if ip_range['CidrIp'] == '0.0.0.0/0':
                     message = f"Warning!SG id: {sg.id} and SG name: {sg.group_name} allows traffic from any IP range "
-                    sns.publish(TopicArn = 'arn:aws:sns:us-east-1:471376517949:TestSecurityGroupAuditAlerts',
+                    sns.publish(TopicArn = '',
                     Message = message)
     
     
